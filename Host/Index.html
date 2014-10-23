@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sample App</title>
+    <style>body { background: darkslategrey; color: cornsilk; }</style>
+</head>
+<body>
+    <p id="display">HELLO</p>
+    <p id="notMobile">This is NOT a mobile</p>
+    <p id="notTablet">This is NOT a tablet</p>
+    <p id="notDesktop">This is NOT a desktop</p>
+    <script src="Scripts/jquery-1.11.1.min.js"></script>
+    <script src="Scripts/responsive-mq.js"></script>
+    <script language="ecmascript">
+        $.responsiveMQ.registerBreakpoint('mobile', '', function () {
+            $('#display').text('This is mobile viewport');
+            $('#notMobile').hide();
+        }, function() {
+            $('#notMobile').show();
+        });
+        $.responsiveMQ.registerBreakpoint('tablet', '@media only screen and (min-width: 640px)', function() {
+            $('#display').text('This is tablet viewport');
+            $('#notTablet').hide();
+        }, function () {
+            $('#notTablet').show();
+        });
+        $.responsiveMQ.registerBreakpoint('desktop', '@media only screen and (min-width: 984px)', function () {
+            $('#display').text('This is desktop viewport');
+            $('#notDesktop').hide();
+        }, function () {
+            $('#notDesktop').show();
+        });
+        $.responsiveMQ.activate();
+    </script>
+</body>
+</html>
