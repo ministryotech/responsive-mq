@@ -2,3 +2,8 @@ Host/bin/
 Host/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Host/obj/
 *.suo
+*.nupkg
+packages/
+ResponsiveMq/.ntvs_analysis.dat
+ResponsiveMq/node_modules/
+deploy/npm-debug.log
