@@ -45,7 +45,8 @@ The intention of responsive-mq is purely to handle identification of a single va
 
 ### Where can I get it? ###
 You can download the javascript file from the source here and add it to your website manually or you can use any of the following pacakge managers...
-* NUGET - [https://www.nuget.org/packages/responsive-mq/](https://www.nuget.org/packages/responsive-mq/)
+
+- **NUGET** - [https://www.nuget.org/packages/responsive-mq/](https://www.nuget.org/packages/responsive-mq/)
 
 ### Contribution guidelines ###
 If you would like to contribute to the project, please contact me.
