@@ -7,3 +7,6 @@ packages/
 ResponsiveMq/.ntvs_analysis.dat
 ResponsiveMq/node_modules/
 deploy/npm-debug.log
+Host/.ntvs_analysis.dat
+Host/node_modules/
+Host/
