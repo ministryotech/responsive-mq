@@ -52,5 +52,7 @@ You can download the javascript file from the source here and add it to your web
 ### Contribution guidelines ###
 If you would like to contribute to the project, please contact me.
 
+The source code can be used in a simple text editor or within Visual Studio using NodeJS Tools for Visual Studio.
+
 ### Who do I talk to? ###
 * Keith Jackson - keith@ministryotech.co.uk
