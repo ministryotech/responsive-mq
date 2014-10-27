@@ -3,15 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{ADA4D71F-F508-4E7D-AD89-462DE47AE3B3}"
-	ProjectSection(SolutionItems) = preProject
-		Scripts\jquery-1.11.1.min.js = Scripts\jquery-1.11.1.min.js
-		Scripts\responsive-mq.js = Scripts\responsive-mq.js
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1CC5D507-9432-4B25-8400-9BB18CD4FC01}"
 	ProjectSection(SolutionItems) = preProject
 		Index.html = Index.html
+		jquery-1.11.1.min.js = jquery-1.11.1.min.js
+		responsive-mq.js = responsive-mq.js
 	EndProjectSection
 EndProject
 Global

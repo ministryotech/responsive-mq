@@ -1,3 +1,4 @@
 Host/bin/
 Host/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Host/obj/
+*.suo
