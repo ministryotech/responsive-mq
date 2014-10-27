@@ -8,7 +8,7 @@ In order to make use of Responsive MQ, simply add a reference to the javascript 
 
 ```
     <script src="jquery-1.11.1.min.js"></script>
-    <script src="responsive-mq.js"></script>
+    <script src="responsive-mq.min.js"></script>
 ```
 
 Responsive MQ is dependent on jQuery. It's been tested with 1.11 but should be compatible with all versions of jQuery - Feel free to raise a bug if you experience any issues with specifc versions. The reason for this is jQuery's comparatively faster speed when setting up resize event responses.

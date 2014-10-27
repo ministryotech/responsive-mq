@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1CC5D507-9432-4B25-8400-9BB18CD4FC01}"
 	ProjectSection(SolutionItems) = preProject
 		deploy\deploy-pms.bat = deploy\deploy-pms.bat
+		README.md = README.md
 		deploy\responsive-mq.nuspec = deploy\responsive-mq.nuspec
 	EndProjectSection
 EndProject

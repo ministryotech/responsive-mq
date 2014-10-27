@@ -10,3 +10,5 @@ deploy/npm-debug.log
 Host/.ntvs_analysis.dat
 Host/node_modules/
 Host/
+responsive-mq.min.js
+deploy/content/
