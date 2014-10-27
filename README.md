@@ -44,7 +44,7 @@ This needs to be a multi-step process so that it can render all of the required 
 The intention of responsive-mq is purely to handle identification of a single valid viewport. To this end only one of the specified registered breakpoints will be active at any one time. Trying to use multiple overlapping media queries will have unpredictable results.
 
 ### Where can I get it? ###
-You can download the javascript file from the source here and add it to your website manually or you can use any of the following pacakge managers...
+You can download the javascript file (dev or minified version) from the downloads page here and add it to your website manually or you can use any of the following package managers...
 
 - **NPM** - [https://www.npmjs.org/package/responsive-mq](https://www.npmjs.org/package/responsive-mq)
 - **NUGET** - [https://www.nuget.org/packages/responsive-mq/](https://www.nuget.org/packages/responsive-mq/)
