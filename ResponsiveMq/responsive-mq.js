@@ -1,4 +1,4 @@
-﻿/* responsive-mq.js - v1.0.1.0 */
+﻿/* responsive-mq.js - v1.0.2 */
 /*
  * ResponsiveMQ     Bringing media queries to Javascript
  * Author           Keith Jackson (tiefling)
