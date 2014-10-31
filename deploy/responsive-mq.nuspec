@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>responsive-mq</id>
-    <version>1.1.1</version>
+    <version>1.2.2</version>
     <authors>The Ministry of Technology</authors>
     <owners>The Ministry of Technology</owners>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
@@ -10,7 +10,7 @@
     <iconUrl>http://www.ministryotech.co.uk/</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Responsive MQ has been designed to enable you to attach JavaScript functions to media queries so you can have viewport specific code executing within your app to partner up with your responsive CSS.</description>
-    <releaseNotes>Initial release.</releaseNotes>
+    <releaseNotes>Added AMD support.</releaseNotes>
     <copyright>Copyright 2014 Minotech Ltd T/A The Ministry of Technology</copyright>
     <tags>Responsive MQ CSS JavaScript JS jQuery Viewport Design Media Query responsiveMQ</tags>
     <dependencies>

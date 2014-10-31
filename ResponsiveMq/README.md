@@ -5,11 +5,20 @@ Responsive MQ has been designed to enable you to attach JavaScript functions to 
 
 ### How do I get set up? ###
 In order to make use of Responsive MQ, simply add a reference to the javascript file in your page or using your favourite script loader.
-
 ```
     <script src="jquery-1.11.1.min.js"></script>
     <script src="responsive-mq.min.js"></script>
 ```
+As of v 1.2.2 it now supports AMD - You can use it with RequireJS like this...
+```
+define(['responsive-mq', 'jquery'],
+    function(ResponsiveMQ) {
+		ResponsiveMQ.registerBreakpoint('mobile', '', function () {
+            $('#display').text('This is mobile viewport');
+        });
+    });
+```
+This will affect where Responsive MQ is placed. If you are using traditional methodology then it will be attached to the jQuery object. If you are using RequireJS then it will be returned by itself.
 
 Responsive MQ is dependent on jQuery. It's been tested with 1.11 but should be compatible with all versions of jQuery - Feel free to raise a bug if you experience any issues with specifc versions. The reason for this is jQuery's comparatively faster speed when setting up resize event responses.
 

@@ -1,4 +1,4 @@
-﻿/* responsive-mq.js - v1.1.1 */
+﻿/* responsive-mq.js - v1.2.2 */
 /*
  * ResponsiveMQ     Bringing media queries to Javascript
  * Author           Keith Jackson (tiefling)
@@ -7,18 +7,18 @@
  * WebSite          http://www.ministryotech.co.uk
  */
 
-(function ($) {
+var respMqFunc = function ($) {
 
-    $.responsiveMQ = $.responsiveMQ || {};
+    var responsiveMq = {};
 
-    $.responsiveMQ.registeredBreakpoints = [];
-    $.responsiveMQ.lastActiveBreakpointName = '';
+    responsiveMq.registeredBreakpoints = [];
+    responsiveMq.lastActiveBreakpointName = '';
 
-    $.responsiveMQ.registerBreakpoint = function (name, mediaQueryCssName, matchedFunc, notMatchedFunc) {
-        $.responsiveMQ.registeredBreakpoints.push({ 'name': name, 'mediaQueryCssName': mediaQueryCssName, 'matchedFunc': matchedFunc, 'notMatchedFunc': notMatchedFunc });
+    responsiveMq.registerBreakpoint = function (name, mediaQueryCssName, matchedFunc, notMatchedFunc) {
+        responsiveMq.registeredBreakpoints.push({ 'name': name, 'mediaQueryCssName': mediaQueryCssName, 'matchedFunc': matchedFunc, 'notMatchedFunc': notMatchedFunc });
     };
 
-    $.responsiveMQ.activate = function () {
+    responsiveMq.activate = function () {
 
         var renderMarkup = function (className) {
             $(document.body).append('<span class="' + className + '"></span>');
@@ -28,18 +28,18 @@
             var styleString = '\n';
             if (mediaQueryCssName != '') {
                 styleString += mediaQueryCssName + '{\n';
-                for (var bpi = 0; bpi < $.responsiveMQ.registeredBreakpoints.length; bpi++) {
-                    if ($.responsiveMQ.registeredBreakpoints[bpi].name !== className) {
-                        styleString += '   .' + $.responsiveMQ.registeredBreakpoints[bpi].name + ' { display: none; }\n';
+                for (var bpi = 0; bpi < responsiveMq.registeredBreakpoints.length; bpi++) {
+                    if (responsiveMq.registeredBreakpoints[bpi].name !== className) {
+                        styleString += '   .' + responsiveMq.registeredBreakpoints[bpi].name + ' { display: none; }\n';
                     } else {
                         styleString += '   .' + className + ' { display: inline; }\n';
                     }
                 }
                 styleString += '}\n';
             } else {
-                for (var bpx = 0; bpx < $.responsiveMQ.registeredBreakpoints.length; bpx++) {
-                    if ($.responsiveMQ.registeredBreakpoints[bpx].name !== className) {
-                        styleString += '.' + $.responsiveMQ.registeredBreakpoints[bpx].name + ' { display: none; }\n';
+                for (var bpx = 0; bpx < responsiveMq.registeredBreakpoints.length; bpx++) {
+                    if (responsiveMq.registeredBreakpoints[bpx].name !== className) {
+                        styleString += '.' + responsiveMq.registeredBreakpoints[bpx].name + ' { display: none; }\n';
                     } else {
                         styleString += '.' + className + ' { display: inline; }\n';
                     }
@@ -49,11 +49,11 @@
         };
 
         var applyResponsiveJs = function () {
-            for (var rjsi = 0; rjsi < $.responsiveMQ.registeredBreakpoints.length; rjsi++) {
-                var bp = $.responsiveMQ.registeredBreakpoints[rjsi];
+            for (var rjsi = 0; rjsi < responsiveMq.registeredBreakpoints.length; rjsi++) {
+                var bp = responsiveMq.registeredBreakpoints[rjsi];
                 if ($('.' + bp.name).css('display') == 'inline') {
-                    if (bp.name !== $.responsiveMQ.lastActiveBreakpointName) {
-                        $.responsiveMQ.lastActiveBreakpointName = bp.name;
+                    if (bp.name !== responsiveMq.lastActiveBreakpointName) {
+                        responsiveMq.lastActiveBreakpointName = bp.name;
                         var matchedFunc = bp.matchedFunc;
                         if (matchedFunc !== undefined && matchedFunc !== null) {
                             matchedFunc();
@@ -68,13 +68,20 @@
             }
         };
 
-        for (var i = 0; i < $.responsiveMQ.registeredBreakpoints.length; i++) {
-            renderMarkup($.responsiveMQ.registeredBreakpoints[i].name);
-            renderStyle($.responsiveMQ.registeredBreakpoints[i].name, $.responsiveMQ.registeredBreakpoints[i].mediaQueryCssName);
+        for (var i = 0; i < responsiveMq.registeredBreakpoints.length; i++) {
+            renderMarkup(responsiveMq.registeredBreakpoints[i].name);
+            renderStyle(responsiveMq.registeredBreakpoints[i].name, responsiveMq.registeredBreakpoints[i].mediaQueryCssName);
         }
 
         $(window).on('resize', applyResponsiveJs);
         $(document).ready(applyResponsiveJs);
     };
 
-})(jQuery);
+    return responsiveMq;
+};
+
+if (typeof define === 'function' && define.amd) {
+    define(['jquery'], respMqFunc);
+} else {
+    $.responsiveMQ = respMqFunc(jQuery);
+}
