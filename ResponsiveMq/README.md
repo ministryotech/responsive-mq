@@ -25,34 +25,34 @@ Responsive MQ is dependent on jQuery. It's been tested with 1.11 but should be c
 ### How do I use it? ###
 Using responsive-mq is a two step process. Firstly you need to register a breakpoint against a matching function and an optional function to execute when the breakpoint no longer matches the media query...
 ```
-        $.responsiveMQ.registerBreakpoint(name, mediaQueryName, matchedFunction(), OPTIONAL unmatchedFunction());
+$.responsiveMQ.registerBreakpoint(name, mediaQueryName, matchedFunction(), OPTIONAL unmatchedFunction());
 ```
 ```
-        $.responsiveMQ.registerBreakpoint('mobile', '', function () {
-            $('#display').text('This is mobile viewport');
-        });
-        $.responsiveMQ.registerBreakpoint('tablet', '@media only screen and (min-width: 640px)', function() {
-            $('#display').text('This is tablet viewport');
-        });
+$.responsiveMQ.registerBreakpoint('mobile', '', function () {
+    $('#display').text('This is mobile viewport');
+});
+$.responsiveMQ.registerBreakpoint('tablet', '@media only screen and (min-width: 640px)', function() {
+    $('#display').text('This is tablet viewport');
+});
 ```
 or...
 ```
-        $.responsiveMQ.registerBreakpoint('mobile', '', function () {
-            $('#display').text('This is mobile viewport');
-            $('#notMobile').hide();
-        }, function() {
-            $('#notMobile').show();
-        });
-        $.responsiveMQ.registerBreakpoint('tablet', '@media only screen and (min-width: 640px)', function() {
-            $('#display').text('This is tablet viewport');
-            $('#notTablet').hide();
-        }, function () {
-            $('#notTablet').show();
-        });
+$.responsiveMQ.registerBreakpoint('mobile', '', function () {
+    $('#display').text('This is mobile viewport');
+    $('#notMobile').hide();
+}, function() {
+    $('#notMobile').show();
+});
+$.responsiveMQ.registerBreakpoint('tablet', '@media only screen and (min-width: 640px)', function() {
+    $('#display').text('This is tablet viewport');
+    $('#notTablet').hide();
+}, function () {
+    $('#notTablet').show();
+});
 ```
 Once you have registered all of your breakpoint functions you can activate responsive-mq as follows...
 ```
-        $.responsiveMQ.activate();
+$.responsiveMQ.activate();
 ```
 This needs to be a multi-step process so that it can render all of the required markup and style blocks.
 

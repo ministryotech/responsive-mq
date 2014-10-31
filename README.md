@@ -8,8 +8,8 @@ In order to make use of Responsive MQ, simply add a reference to the javascript 
 In the attached sample HTML file the references are added manually toward the end of the body tag.
 ```
 #!html
-    <script src="jquery-1.11.1.min.js"></script>
-    <script src="responsive-mq.min.js"></script>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="responsive-mq.min.js"></script>
 ```
 As of v 1.2.2 it now supports AMD - You can use it with RequireJS like this...
 ```
@@ -29,24 +29,24 @@ Responsive MQ is dependent on jQuery. It's been tested with 1.11 but should be c
 Using responsive-mq is a two step process. Firstly you need to register a breakpoint against a matching function and an optional function to execute when the breakpoint no longer matches the media query...
 ```
 #!javascript
-        $.responsiveMQ.registerBreakpoint('mobile', '', function () {
-            $('#display').text('This is mobile viewport');
-        });
+$.responsiveMQ.registerBreakpoint('mobile', '', function () {
+    $('#display').text('This is mobile viewport');
+});
 ```
 or...
 ```
 #!javascript
-        $.responsiveMQ.registerBreakpoint('mobile', '', function () {
-            $('#display').text('This is mobile viewport');
-            $('#notMobile').hide();
-        }, function() {
-            $('#notMobile').show();
-        });
+$.responsiveMQ.registerBreakpoint('mobile', '', function () {
+    $('#display').text('This is mobile viewport');
+    $('#notMobile').hide();
+}, function() {
+    $('#notMobile').show();
+});
 ```
 Once you have registered all of your breakpoint functions you can activate responsive-mq as follows...
 ```
 #!javascript
-        $.responsiveMQ.activate();
+$.responsiveMQ.activate();
 ```
 This needs to be a multi-step process so that it can render all of the required markup and style blocks.
 
