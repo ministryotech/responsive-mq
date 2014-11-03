@@ -1,4 +1,4 @@
-# README #
+# responsive-mq.js #
 
 ### What is it for? ###
 Responsive MQ has been designed to enable you to attach JavaScript functions to media queries so you can have viewport specific code executing within your app to partner up with your responsive CSS. It does this by registering named elements of markup which can then be checked on resize to determine what the current viewport is. This is handled by the responsive-mq.js 'registerBreakpoint()' and 'activate()' functions.
@@ -6,8 +6,8 @@ Responsive MQ has been designed to enable you to attach JavaScript functions to 
 ### How do I get set up? ###
 In order to make use of Responsive MQ, simply add a reference to the javascript file in your page or using your favourite script loader.
 ```
-    <script src="jquery-1.11.1.min.js"></script>
-    <script src="responsive-mq.min.js"></script>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="responsive-mq.min.js"></script>
 ```
 As of v 1.2.2 it now supports AMD - You can use it with RequireJS like this...
 ```
@@ -58,3 +58,14 @@ This needs to be a multi-step process so that it can render all of the required 
 
 ### Limitations ###
 The intention of responsive-mq is purely to handle identification of a single valid viewport. To this end only one of the specified registered breakpoints will be active at any one time. Trying to use multiple overlapping media queries will have unpredictable results.
+
+## The Ministry of Technology Open Source Products ##
+Welcome to The Ministry of Technology open source products. All open source Ministry of Technology products are distributed under the MIT License for maximum re-usability. Details on more of our products and services can be found on our website at http://www.ministryotech.co.uk
+
+Our open source repositories can be found here...
+
+[https://bitbucket.org/ministryotech](https://bitbucket.org/ministryotech)
+
+[https://github.com/tiefling](https://github.com/tiefling)
+
+Most of our content is stored on BitBucket, but we also do some Umbraco related projects and with Umbraco itself hosted on GitHub it made sense to host those there too.
