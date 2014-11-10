@@ -1,4 +1,4 @@
-﻿/* responsive-mq.js - v1.2.2 */
+﻿/* responsive-mq.js - v1.2.4 */
 /*
  * ResponsiveMQ     Bringing media queries to Javascript
  * Author           Keith Jackson (tiefling)
@@ -26,7 +26,7 @@ var respMqFunc = function ($) {
 
         var renderStyle = function (className, mediaQueryCssName) {
             var styleString = '\n';
-            if (mediaQueryCssName != '') {
+            if (mediaQueryCssName !== '') {
                 styleString += mediaQueryCssName + '{\n';
                 for (var bpi = 0; bpi < responsiveMq.registeredBreakpoints.length; bpi++) {
                     if (responsiveMq.registeredBreakpoints[bpi].name !== className) {

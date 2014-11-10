@@ -4,7 +4,10 @@ REM -- Uncomment to Init NPM first run --
 REM CALL ..\..\set-npm.bat
 
 ECHO Compiling JS...
-CALL ..\ResponsiveMq\node_modules\.bin\minify ..\ResponsiveMq\responsive-mq.js
+CD ..\ResponsiveMq
+CALL grunt
+CD ..\deploy
+pause
 
 ECHO Preparing NuGet...
 CALL ..\..\set-nuget-key.bat
