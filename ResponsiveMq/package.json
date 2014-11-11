@@ -1,17 +1,17 @@
 {
   "name": "responsive-mq",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Responsive MQ has been designed to enable you to attach JavaScript functions to media queries so you can have viewport specific code executing within your app to partner up with your responsive CSS.",
   "keywords": "Responsive MQ CSS JavaScript JS jQuery Viewport Design Media Query responsiveMQ",
-  "homepage": "https://bitbucket.org/ministryotech/responsive-mq",
+  "homepage": "https://github.com/ministryotech/responsive-mq",
   "bugs": {
-    "url": "https://bitbucket.org/ministryotech/responsive-mq/issues",
+    "url": "https://github.com/ministryotech/responsive-mq/issues",
     "email": "keith@ministryotech.co.uk"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/ministryotech/responsive-mq.git"
+    "url": "https://github.com/ministryotech/responsive-mq.git"
   },
   "main": "responsive-mq.js",
   "author": {
