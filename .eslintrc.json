@@ -1,0 +1,83 @@
+{
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "node": false,
+      "jquery": true,
+      "prototypejs": true,
+      "mocha": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2015,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": false
+      }
+    },
+    "rules": {
+      "strict": [
+        2,
+        "safe"
+      ],
+      "block-scoped-var": 2,
+      "camelcase": 2,
+      "comma-spacing": [
+        2,
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "dot-notation": 2,
+      "indent": 1,
+      "jsx-quotes": [
+        2,
+        "prefer-double"
+      ],
+      "new-parens": 2,
+      "no-alert": 2,
+      "no-duplicate-imports": 2,
+      "no-else-return": 2,
+      "no-extend-native": 1,
+      "no-extra-parens": 2,
+      "no-implicit-globals": 2,
+      "no-invalid-this": 2,
+      "no-proto": 2,
+      "no-unused-expressions": 1,
+      "no-unused-vars": [
+        2,
+        {
+          "varsIgnorePattern": "React",
+          "argsIgnorePattern": "useFor"
+        }
+      ],
+      "no-use-before-define": 2,
+      "no-useless-constructor": 1,
+      "no-var": 2,
+      "prefer-const": 1,
+      "quotes": [
+        2,
+        "single",
+        {
+          "allowTemplateLiterals": false
+        }
+      ],
+      "semi": [
+        2,
+        "never"
+      ],
+      "space-before-function-paren": [
+        1,
+        "never"
+      ],
+      "vars-on-top": 1
+    },
+    "globals": {
+      "require": false,
+      "module": true,
+      "addLoadEvent": false,
+      "$": false,
+      "jQuery": false,
+      "define": true
+    }
+}

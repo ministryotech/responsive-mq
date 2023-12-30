@@ -1,0 +1,51 @@
+{
+  "name": "responsive-mq",
+  "version": "1.3.0",
+  "author": "Keith Jackson",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "responsive",
+    "media query",
+    "css",
+    "jquery",
+    "viewport",
+    "design"
+  ],
+  "description": "Responsive MQ has been designed to enable you to attach JavaScript functions to media queries so you can have viewport specific code executing within your app to partner up with your responsive CSS.",
+  "bugs": {
+    "url": "https://github.com/ministryotech/responsive-mq/issues",
+    "email": "temporal-net@live.co.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ministryotech/responsive-mq.git"
+  },
+  "main": "responsive-mq.js",
+  "dependencies": {
+    "jquery": ">=2.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-defaults": "^9.0.0",
+    "uglify-js": "^3.17.4"
+  },
+  "scripts": {
+    "warn-win": "echo The Windows scripts have not been fully tested and may need an update...",
+    "ensure-dir": "mkdir ./deploy/build",
+    "uglify": "uglifyjs responsive-mq.js -m -o ./deploy/build/responsive-mq.js && uglifyjs responsive-mq.js -m -c -o ./deploy/build/responsive-mq.min.js",
+    "copy-readme": "cp README.md ./deploy/build/",
+    "copy-package-json": "cp package.json ./deploy/build/",
+    "copy-readme-win": "xcopy README.md ./deploy/build/",
+    "copy-package-json-win": "xcopy package.json ./deploy/build/",
+    "build": "npm run clean && npm run ensure-dir && npm run uglify && npm run copy-readme && npm run copy-package-json",
+    "build-win": "npm run warn-win && npm run clean-win && npm run ensure-dir && npm run uglify && npm run copy-readme-win && npm run copy-package-json-win",
+    "clean": "rm -rf ./deploy/build",
+    "clean-win": "rmdir ./deploy/build /f",
+    "lint": "eslint --fix",
+    "publish-to-npm": "npm publish deploy/build/",
+    "build-tar-for-github": "tar -czvf responsive-mq.tar.gz deploy/build/",
+    "release": "npm run lint && npm run build && npm run publish-to-npm && npm run build-tar-for-github",
+    "release-win": "npm run lint && npm run build-win && npm run publish-to-npm"
+  }
+}
