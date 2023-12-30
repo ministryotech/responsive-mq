@@ -7,7 +7,7 @@ Responsive MQ has been designed to enable you to attach JavaScript functions to 
 In order to make use of Responsive MQ, simply add a reference to the javascript file in your page or using your favourite script loader.
 In the attached sample HTML file the references are added manually toward the end of the body tag.
 
-	<script src="jquery-1.11.1.min.js"></script>
+	<script src="jquery.min.js"></script>
 	<script src="responsive-mq.min.js"></script>
 
 As of v 1.2.2 it now supports AMD - You can use it with RequireJS like this...
