@@ -48,6 +48,11 @@ This needs to be a multistep process so that it can render all the required mark
 ### Limitations ###
 The intention of responsive-mq is purely to handle identification of a single valid viewport. To this end only one of the specified registered breakpoints will be active at any one time. Trying to use multiple overlapping media queries will have unpredictable results.
 
+## jQuery
+Use v1.2.x for jQuery 1.x
+Use v1.3.x for jQuery 2.x
+Use v1.4.x for jQuery 3.x
+
 # The Ministry of Technology Open Source Products
 Welcome to The Ministry of Technology open source products. All open source Ministry of Technology products are distributed under the MIT License for maximum re-usability.
 Our other open source repositories can be found here...

@@ -1,6 +1,6 @@
 {
   "name": "responsive-mq",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": "Keith Jackson",
   "license": "MIT",
   "private": false,
@@ -23,7 +23,7 @@
   },
   "main": "responsive-mq.js",
   "dependencies": {
-    "jquery": ">=2.2.4"
+    "jquery": ">=3.7.1"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
