@@ -1,4 +1,4 @@
-﻿/* responsive-mq.js - v1.3.0 */
+﻿/* responsive-mq.js - v1.5.0 */
 /*
  * ResponsiveMQ     Bringing media queries to Javascript
  * Author           Keith Jackson (tiefling)
@@ -6,9 +6,9 @@
  * License          MIT / http://bit.ly/mit-license
  */
 
-const respMqFunc = function ($) {
+var respMqFunc = function ($) {
 
-    const responsiveMq = {};
+    var responsiveMq = {};
 
     responsiveMq.registeredBreakpoints = [];
     responsiveMq.lastActiveBreakpointName = '';
@@ -24,15 +24,15 @@ const respMqFunc = function ($) {
 
     responsiveMq.activate = function () {
 
-        const renderMarkup = function (className) {
+        var renderMarkup = function (className) {
             $(document.body).append('<span class="' + className + '"></span>');
         };
 
-        const renderStyle = function (className, mediaQueryCssName) {
-            let styleString = '\n';
+        var renderStyle = function (className, mediaQueryCssName) {
+            var styleString = '\n';
             if (mediaQueryCssName !== '') {
                 styleString += mediaQueryCssName + '{\n';
-                for (let bpi = 0; bpi < responsiveMq.registeredBreakpoints.length; bpi++) {
+                for (var bpi = 0; bpi < responsiveMq.registeredBreakpoints.length; bpi++) {
                     if (responsiveMq.registeredBreakpoints[bpi].name !== className) {
                         styleString += '   .' + responsiveMq.registeredBreakpoints[bpi].name + ' { display: none; }\n';
                     } else {
@@ -41,7 +41,7 @@ const respMqFunc = function ($) {
                 }
                 styleString += '}\n';
             } else {
-                for (let bpx = 0; bpx < responsiveMq.registeredBreakpoints.length; bpx++) {
+                for (var bpx = 0; bpx < responsiveMq.registeredBreakpoints.length; bpx++) {
                     if (responsiveMq.registeredBreakpoints[bpx].name !== className) {
                         styleString += '.' + responsiveMq.registeredBreakpoints[bpx].name + ' { display: none; }\n';
                     } else {
@@ -52,19 +52,19 @@ const respMqFunc = function ($) {
             $(document.head).append('<style>' + styleString + '</style>');
         };
 
-        const applyResponsiveJs = function () {
-            for (let rjsi = 0; rjsi < responsiveMq.registeredBreakpoints.length; rjsi++) {
-                const bp = responsiveMq.registeredBreakpoints[rjsi];
+        var applyResponsiveJs = function () {
+            for (var rjsi = 0; rjsi < responsiveMq.registeredBreakpoints.length; rjsi++) {
+                var bp = responsiveMq.registeredBreakpoints[rjsi];
                 if ($('.' + bp.name).css('display') === 'inline') {
                     if (bp.name !== responsiveMq.lastActiveBreakpointName) {
                         responsiveMq.lastActiveBreakpointName = bp.name;
-                        const matchedFunc = bp.matchedFunc;
+                        var matchedFunc = bp.matchedFunc;
                         if (matchedFunc !== undefined && matchedFunc !== null) {
                             matchedFunc();
                         }
                     }
                 } else {
-                    const notMatchedFunc = bp.notMatchedFunc;
+                    var notMatchedFunc = bp.notMatchedFunc;
                     if (notMatchedFunc !== undefined && notMatchedFunc !== null) {
                         notMatchedFunc();
                     }
@@ -72,7 +72,7 @@ const respMqFunc = function ($) {
             }
         };
 
-        for (let i = 0; i < responsiveMq.registeredBreakpoints.length; i++) {
+        for (var i = 0; i < responsiveMq.registeredBreakpoints.length; i++) {
             renderMarkup(responsiveMq.registeredBreakpoints[i].name);
             renderStyle(responsiveMq.registeredBreakpoints[i].name, responsiveMq.registeredBreakpoints[i].mediaQueryCssName);
         }
@@ -91,8 +91,11 @@ const respMqFunc = function ($) {
 if (typeof define === 'function' && define.amd) {
     // noinspection JSUnresolvedReference - define check for require.js module support.
     define(['jquery'], respMqFunc);
-} else if (typeof exports === 'object') {
-    module.exports = respMqFunc
-} else {
-    $.responsiveMQ = respMqFunc(jQuery);
+} else { // noinspection JSUnresolvedReference - define check for exports module support.
+    if (typeof exports === 'object') {
+        // noinspection JSUnresolvedReference - define check for exports module support.
+        module.exports = respMqFunc
+    } else {
+        $.responsiveMQ = respMqFunc(jQuery);
+    }
 }

@@ -1,6 +1,6 @@
 {
   "name": "responsive-mq",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "author": "Keith Jackson",
   "license": "MIT",
   "private": false,
@@ -21,7 +21,7 @@
     "type": "git",
     "url": "https://github.com/ministryotech/responsive-mq.git"
   },
-  "main": "responsive-mq.js",
+  "main": "src/responsive-mq.js",
   "dependencies": {
     "jquery": ">=3.7.1"
   },
@@ -31,21 +31,13 @@
     "uglify-js": "^3.17.4"
   },
   "scripts": {
-    "warn-win": "echo The Windows scripts have not been fully tested and may need an update...",
-    "ensure-dir": "mkdir ./deploy/build",
-    "uglify": "uglifyjs responsive-mq.js -m -o ./deploy/build/responsive-mq.js && uglifyjs responsive-mq.js -m -c -o ./deploy/build/responsive-mq.min.js",
-    "copy-readme": "cp README.md ./deploy/build/",
-    "copy-package-json": "cp package.json ./deploy/build/",
-    "copy-readme-win": "xcopy README.md ./deploy/build/",
-    "copy-package-json-win": "xcopy package.json ./deploy/build/",
-    "build": "npm run clean && npm run ensure-dir && npm run uglify && npm run copy-readme && npm run copy-package-json",
-    "build-win": "npm run warn-win && npm run clean-win && npm run ensure-dir && npm run uglify && npm run copy-readme-win && npm run copy-package-json-win",
-    "clean": "rm -rf ./deploy/build",
-    "clean-win": "rmdir ./deploy/build /f",
     "lint": "eslint --fix",
-    "publish-to-npm": "npm publish deploy/build/",
-    "build-tar-for-github": "tar -czvf responsive-mq.tar.gz deploy/build/",
-    "release": "npm run lint && npm run build && npm run publish-to-npm && npm run build-tar-for-github",
-    "release-win": "npm run lint && npm run build-win && npm run publish-to-npm"
+    "ensure-dir": "mkdir ./dist",
+    "clean": "rm -rf ./dist",
+    "uglify": "uglifyjs src/responsive-mq.js -m -o ./dist/responsive-mq.js && uglifyjs src/responsive-mq.js -m -c -o ./dist/responsive-mq.min.js",
+    "build": "npm run clean && npm run ensure-dir && npm run uglify && cp README.md ./dist/ && cp package.json ./dist/",
+    "publish-to-npm": "npm publish dist/",
+    "build-tar-for-github": "tar -czvf responsive-mq.tar.gz dist/",
+    "release": "npm run lint && npm run build && npm run publish-to-npm && npm run build-tar-for-github"
   }
 }
