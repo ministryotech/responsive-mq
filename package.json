@@ -31,7 +31,7 @@
     "uglify-js": "^3.17.4"
   },
   "scripts": {
-    "lint": "eslint --fix",
+    "lint": "eslint src/*.js --fix",
     "ensure-dir": "mkdir ./dist",
     "clean": "rm -rf ./dist",
     "uglify": "uglifyjs src/responsive-mq.js -m -o ./dist/responsive-mq.js && uglifyjs src/responsive-mq.js -m -c -o ./dist/responsive-mq.min.js",

@@ -16,6 +16,8 @@ module.exports = {
         'define': true,
         'require': true,
         'module': true,
+        'jQuery': true,
+        '$': true,
         'addLoadEvent': true,
     },
     extends: [
@@ -99,7 +101,7 @@ module.exports = {
         'no-with': 0, // disallow use of the with statement
         'radix': 0, // require use of the second argument for parseInt() (off by default)
         'require-await': 1, // disallow async functions which have no `await` expression
-        'vars-on-top': 1, // requires to declare all vars on top of their containing scope (off by default)
+        'vars-on-top': 0, // requires to declare all vars on top of their containing scope (off by default)
         'wrap-iife': 0, // require immediate function invocation to be wrapped in parentheses (off by default)
         'yoda': 0, // require or disallow Yoda conditions
 
