@@ -1,6 +1,6 @@
 {
   "name": "responsive-mq",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "author": "Keith Jackson",
   "license": "MIT",
   "private": false,
@@ -21,7 +21,7 @@
     "type": "git",
     "url": "https://github.com/ministryotech/responsive-mq.git"
   },
-  "main": "src/responsive-mq.js",
+  "main": "responsive-mq.js",
   "dependencies": {
     "jquery": ">=3.7.1"
   },
