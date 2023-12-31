@@ -1,5 +1,4 @@
-﻿/* responsive-mq.js - v1.5.0 */
-/*
+﻿/*
  * ResponsiveMQ     Bringing media queries to Javascript
  * Author           Keith Jackson (tiefling)
  * Company          The Ministry of Technology (ministryotech)
