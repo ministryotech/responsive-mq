@@ -63,7 +63,7 @@ var respMqFunc = function ($) {
                         }
                     }
                 } else {
-                    var notMatchedFunc = bp.notMatchedFunc;
+                    var notMatchedFunc = bp.notMatchedFunc
                     if (notMatchedFunc !== undefined && notMatchedFunc !== null) {
                         notMatchedFunc();
                     }
