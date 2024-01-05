@@ -2,9 +2,18 @@
 
 // eslint-disable-next-line strict
 module.exports = {
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+    ],
+    parser: '@typescript-eslint/parser',
+    plugins: [
+        '@typescript-eslint',
+    ],
     root: true,
     parserOptions: {
-        ecmaVersion: 5,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
     },
     env: {
         browser: true,
@@ -13,16 +22,10 @@ module.exports = {
         prototypejs: true,
     },
     globals: {
-        'define': true,
+        'define': false,
         'require': true,
         'module': true,
-        'jQuery': true,
-        '$': true,
-        'addLoadEvent': true,
     },
-    extends: [
-        'eslint:recommended',
-    ],
     rules: {
         ////////// Possible Errors //////////
         'no-await-in-loop': 1, // disallow `await` inside of loops
@@ -106,7 +109,7 @@ module.exports = {
         'yoda': 0, // require or disallow Yoda conditions
 
         ////////// Strict Mode //////////
-        'strict': [ 2, 'safe' ], // controls location of Use Strict Directives
+        //'strict': [ 2, 'safe' ], // controls location of Use Strict Directives
 
         ////////// Variables //////////
         'no-catch-shadow': 0, // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
@@ -184,9 +187,9 @@ module.exports = {
         'wrap-regex': 0, // require regex literals to be wrapped in parentheses (off by default)
 
         ////////// ECMAScript 6 //////////
-        //'no-duplicate-imports': 2,
-        //'no-var': 2, // require let or const instead of var (off by default)
-        //'generator-star': 0, // enforce the position of the * in generator functions (off by default)
+        'no-duplicate-imports': 2,
+        'no-var': 2, // require let or const instead of var (off by default)
+        'generator-star': 0, // enforce the position of the * in generator functions (off by default)
 
         ////////// Legacy //////////
         'max-depth': 0, // specify the maximum depth that blocks can be nested (off by default)
